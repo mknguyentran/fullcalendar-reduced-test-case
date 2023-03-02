@@ -39,9 +39,10 @@ export class CalendarComponent implements OnInit, AfterViewInit {
   public ngAfterViewInit(): void {
     this.api = this.cal.getApi();
 
-    const startDate = moment().add(0, 'day').set({hour: 22}).utc();
-    // This
-    // const startDate = moment().set({hour: 22}).utc();
+    const startDate = moment().set({hour: 22}).utc();
+
+    // Uncomment this to move the startDate to tomorrow. Now the first date is displayed correctly. 
+    // startDate.add(1, 'day');
 
     const endDate = moment().add(5, 'day').set({hour: 5}).utc();
 
